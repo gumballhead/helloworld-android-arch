@@ -13,19 +13,11 @@ interface View<Model> {
 abstract class AsyncView<Model> : View<Model> {
     fun render(result: Result<Model>) {
         when (result) {
-            is Result.Loading ->
-                renderLoading(true)
-
-            is Result.Success -> {
-                render(result.data)
-                renderLoading(false)
-            }
-
-            is Result.Failure -> {
-                renderError(result.error)
-                renderLoading(false)
-            }
+            is Result.Success -> render(result.data)
+            is Result.Failure -> renderError(result.error)
         }
+
+        renderLoading(result is Result.Loading)
     }
 
     abstract fun renderError(error: Throwable)
