@@ -3,7 +3,6 @@ package com.example.kirke.helloworld
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import kotlinx.coroutines.*
-import kotlin.coroutines.CoroutineContext
 
 class GreetingException(name: String): Exception("Go away, $name!")
 
@@ -19,10 +18,7 @@ object GreetingRepository {
 class GreetingViewModel: ViewModel(), CoroutineScope {
     val data = MutableLiveData<Result<String>>()
 
-    private val job = Job()
-
-    override val coroutineContext: CoroutineContext
-        get() = job + Dispatchers.Main
+    override val coroutineContext = Job() + Dispatchers.Main
 
     fun greet(name: String) {
         data.value = Result.Loading()
@@ -38,6 +34,6 @@ class GreetingViewModel: ViewModel(), CoroutineScope {
     }
 
     override fun onCleared() {
-        job.cancel()
+        coroutineContext.cancel()
     }
 }
