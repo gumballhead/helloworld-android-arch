@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">HelloWorld</string>
-    <string name="load_greeting">Load greeting</string>
+    <string name="greet">Greet</string>
     <string name="your_name">Your name</string>
 </resources>

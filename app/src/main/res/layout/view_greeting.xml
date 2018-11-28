@@ -10,7 +10,7 @@
         android:layout_gravity="center"
         android:text="Hello World!"
         android:textSize="32sp"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 
     <ProgressBar
         android:id="@+id/loading_spinner"
