@@ -18,7 +18,7 @@ object GreetingRepository {
 class GreetingViewModel: ViewModel(), CoroutineScope {
     val data = MutableLiveData<Result<String>>()
 
-    override val coroutineContext = Job() + Dispatchers.Main
+    override val coroutineContext = Job() + Dispatchers.IO
 
     fun greet(name: String) {
         data.value = Result.Loading()
