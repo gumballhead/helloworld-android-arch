@@ -3,7 +3,6 @@ package com.example.kirke.helloworld
 import org.junit.Test
 
 import org.junit.Assert.*
-import org.mockito.Mockito.mock
 
 /**
  * Example local unit test, which will execute on the development machine (host).

@@ -1,11 +1,11 @@
 package com.example.kirke.helloworld
 
-import android.support.v4.content.ContextCompat
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 
 class GreetingView(root: ViewGroup): AsyncView<String>() {
     private val message = root.findViewById<TextView>(R.id.message)

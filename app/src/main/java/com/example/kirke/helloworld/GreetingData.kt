@@ -1,7 +1,7 @@
 package com.example.kirke.helloworld
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.*
 
 class GreetingException(name: String): Exception("Go away, $name!")
@@ -25,9 +25,11 @@ class GreetingViewModel: ViewModel(), CoroutineScope {
 
         launch {
             try {
-                val greeting = GreetingRepository.fetch(if (name.isBlank()) "World" else name)
+                val greeting = GreetingRepository.fetch(if (name.isNotBlank()) name else "World")
                 data.postValue(Result.Success(greeting))
-            } catch (error: GreetingException) {
+            }
+
+            catch (error: GreetingException) {
                 data.postValue(Result.Failure(error))
             }
         }
