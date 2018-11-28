@@ -8,8 +8,8 @@ import android.widget.ProgressBar
 import android.widget.TextView
 
 class GreetingView(root: ViewGroup): AsyncView<String>() {
-    private val message = root.findViewById<TextView>(R.id.hello_message)
-    private val spinner = root.findViewById<ProgressBar>(R.id.loading_spinner)
+    private val message = root.findViewById<TextView>(R.id.message)
+    private val spinner = root.findViewById<ProgressBar>(R.id.spinner)
 
     override fun render(model: String) {
         with (message) {
