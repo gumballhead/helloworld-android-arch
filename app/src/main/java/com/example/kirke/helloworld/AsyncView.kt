@@ -17,9 +17,9 @@ abstract class AsyncView<Model> : View<Model> {
             is Result.Failure -> render(result.error)
         }
 
-        renderLoading(result is Result.Loading)
+        showLoading(result is Result.Loading)
     }
 
     abstract fun render(error: Throwable)
-    abstract fun renderLoading(loading: Boolean)
+    abstract fun showLoading(loading: Boolean)
 }

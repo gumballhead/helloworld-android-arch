@@ -25,7 +25,7 @@ class GreetingView(root: ViewGroup): AsyncView<String>() {
         }
     }
 
-    override fun renderLoading(loading: Boolean) {
+    override fun showLoading(loading: Boolean) {
         if (loading) {
             spinner.visibility = VISIBLE
             message.visibility = GONE
