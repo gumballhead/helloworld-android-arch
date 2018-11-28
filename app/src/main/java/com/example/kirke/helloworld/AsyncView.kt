@@ -14,12 +14,12 @@ abstract class AsyncView<Model> : View<Model> {
     fun render(result: Result<Model>) {
         when (result) {
             is Result.Success -> render(result.data)
-            is Result.Failure -> renderError(result.error)
+            is Result.Failure -> render(result.error)
         }
 
         renderLoading(result is Result.Loading)
     }
 
-    abstract fun renderError(error: Throwable)
+    abstract fun render(error: Throwable)
     abstract fun renderLoading(loading: Boolean)
 }

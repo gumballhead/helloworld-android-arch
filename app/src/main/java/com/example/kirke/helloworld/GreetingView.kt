@@ -18,7 +18,7 @@ class GreetingView(root: ViewGroup): AsyncView<String>() {
         }
     }
 
-    override fun renderError(error: Throwable) {
+    override fun render(error: Throwable) {
         with (message) {
             setTextColor(ContextCompat.getColor(context, R.color.failure))
             text = error.message
