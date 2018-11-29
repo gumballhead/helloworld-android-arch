@@ -1,4 +1,3 @@
-@greeting-feature
 Feature: As a user, I would like my phone to greet on command
   Scenario: A user wants to be greeted by name
     Given a user with name "Andrew"
